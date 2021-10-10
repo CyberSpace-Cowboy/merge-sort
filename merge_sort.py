@@ -43,11 +43,19 @@ def IsSorted(array):
 
 if __name__=="__main__":
     print("MERGE SORT".center(columns))
-    array = input("\nInput the numbers separated by commas: ").split(",")
-    array = [int(x) for x in array]
-    n = len(array)
-    copy = array.copy()
-    MergeSort(array,copy, 0, n-1)
 
-    if IsSorted(array):
-        print(array)
+    while True:
+        array = input("\nInput the numbers separated by commas: ").split(",")
+        array = [int(x) for x in array]
+        n = len(array)
+        copy = array.copy()
+        MergeSort(array,copy, 0, n-1)
+
+        if IsSorted(array):
+            print(array)
+
+        ask = input("\nWanna Continue? [y/n]: ").lower()
+        if ask == "y":
+            continue
+        elif ask == "n":
+            exit()
